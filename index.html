@@ -85,6 +85,22 @@
         border-radius: 4px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
       }
+
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e0e0e0;
+      }
+      footer h2 {
+        font-size: 1.2rem;
+      }
+      footer ul {
+        padding-left: 0;
+        list-style: none;
+      }
+      footer li {
+        margin-bottom: 0.5rem;
+      }
     </style>
   </head>
   <body>
@@ -128,6 +144,14 @@
         JSON をダウンロード
       </button>
     </section>
+
+    <footer>
+      <h2>関連リンク</h2>
+      <ul>
+        <li><a href="https://docs.mapbox.com/api/maps/styles/#classic-mapbox-styles" target="_blank" rel="noopener noreferrer">クラシック・スタイルの紹介</a></li>
+        <li><a href="https://console.mapbox.com/account/access-tokens/" target="_blank" rel="noopener noreferrer">TOKENの取得ページ</a></li>
+      </ul>
+    </footer>
 
     <script>
       const styleSelect = document.getElementById("style");
