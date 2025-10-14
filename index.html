@@ -41,9 +41,6 @@
     <section id="result-section" class="result" hidden>
       <strong>生成された URL</strong>
       <p id="generated-url"></p>
-      <button type="button" class="secondary" id="copy-btn">
-        URL をコピー
-      </button>
       <button type="button" class="secondary" id="download-btn" disabled>
         JSON をダウンロード
       </button>
@@ -64,7 +61,6 @@
       const message = document.getElementById("message");
       const resultSection = document.getElementById("result-section");
       const generatedUrlElem = document.getElementById("generated-url");
-      const copyBtn = document.getElementById("copy-btn");
       const downloadBtn = document.getElementById("download-btn");
       const previewWrapper = document.getElementById("preview-wrapper");
       const previewImg = document.getElementById("style-preview");
@@ -158,22 +154,6 @@
         previewWrapper.hidden = true;
         message.textContent = "プレビュー画像を読み込めませんでした。";
         message.style.color = "#c62828";
-      });
-
-      copyBtn.addEventListener("click", async () => {
-        const url = generatedUrlElem.textContent;
-        try {
-          await navigator.clipboard.writeText(url);
-          message.textContent = "URL をコピーしました。";
-          message.style.color = "#2e7d32";
-          setTimeout(() => {
-            message.textContent = "";
-            message.style.color = "#c62828";
-          }, 2000);
-        } catch (error) {
-          message.textContent = "クリップボードへのコピーに失敗しました。";
-          message.style.color = "#c62828";
-        }
       });
 
       downloadBtn.addEventListener("click", async () => {
